@@ -47,6 +47,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.hostname = "wocker.dev"
   config.vm.network :private_network, ip: "172.17.8.23"
+  config.vm.network "forwarded_port", guest: 80, host: 2375
 
   config.vm.synced_folder "./data", "/home/core/data", create: true, id: "core", nfs: true, mount_options: ['nolock,vers=3,udp']
 
